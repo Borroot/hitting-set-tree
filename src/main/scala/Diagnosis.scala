@@ -176,4 +176,50 @@ object Diagnosis {
 
         return (SD, COMP, OBS)
     }
+
+//    /**
+//     * Wiring example from the syllabus at page 50.
+//     *
+//     * @return tuple consisting of
+//     *         1. SD:   list of formulae containing the system description
+//     *         2. COMP: list of terms that are the components of the system
+//     *         3. OBS:  list of formulae that are the observations
+//     */
+//    def problem4(): (List[Formula], List[FOLTerm], List[Formula]) = {
+//        val SD = List(
+//            and_gate,
+//            or_gate,
+//            exor_gate,
+//            fof"and(a1)",
+//            fof"and(a2)",
+//            fof"exor(x1)",
+//            fof"exor(x2)",
+//            fof"or(r1)",
+//            fof"out(x1) <-> in2(a2)",
+//            fof"out(x1) <-> in1(x2)",
+//            fof"out(a2) <-> in1(r1)",
+//            fof"in1(a2) <-> in2(x2)",
+//            fof"in1(x1) <-> in1(a1)",
+//            fof"in2(x1) <-> in2(a1)",
+//            fof"out(a1) <-> in2(r1)"
+//        )
+//
+//        val COMP = List(
+//            fot"a1",
+//            fot"a2",
+//            fot"x1",
+//            fot"x2",
+//            fot"r1"
+//        )
+//
+//        val OBS = List(
+//            fof"in1(a1)",
+//            fof"-in2(a1)",
+//            fof"in1(a2)",
+//            fof"-out(x2)",
+//            fof"-out(r1)"
+//        )
+//
+//        return (SD, COMP, OBS)
+//    }
 }
