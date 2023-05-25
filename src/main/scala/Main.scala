@@ -1,18 +1,19 @@
 import Diagnosis._
-import Conflicts.tpf
-import Hitting.makeHittingTree
-import gapt.expr.stringInterpolationForExpressions
+import Hit.diagnose
+import gapt.expr.formula.Formula
+import gapt.expr.formula.fol.FOLTerm
 
 
 
 object Main extends App {
-  println("Running diagnostics on problem 1 with an empty list of broken components..")
+  val problems : List[() => (List[Formula], List[FOLTerm], List[Formula])] = List(problem1, problem2, problem3, problem_fa)
+  val problem_names = List("problem1", "problem2", "problem3", "problem_fa")
 
-  val tree = makeHittingTree(problem1)
-  println(tree)
-
-//  val hs = List()
-//  val Some(result) = tpf(problem1, hs)
-//
-//  println(result)
+  for ((problem, name) <- problems zip problem_names) {
+    println(s"Minimal hitting sets for ${name}.")
+    diagnose(problem) match {
+      case Some(hits) => println(s"${hits.map(_.mkString(" ")).mkString(" | ")}")
+      case None => println("None")
+    }
+  }
 }
